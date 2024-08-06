@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.winner{
+    display: flex;
+    font-size: 1.6rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.newgame{
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+.container{
+    width: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    
+}
+.colO{
+    color: blue;
+}
+.container .box{
+    height: 13rem;
+    color: white;
+    width: 13rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+.boxX::after{
+    content: "X";
+    color: red;
+    visibility: hidden;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    bottom:0;
+    left:0;
+    border-radius: 10px;
+    background-color:orange ;
+    transition:height 0.2s ease-in-out;
+    
+
+}
+.boxX.expandedX::after{
+    visibility: visible;
+    height: 100%;
+}
+.boxO::after{
+    content: "O";
+    visibility: hidden;
+    color: blue;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    bottom:0;
+    left:0;
+    border-radius: 10px;
+    background-color: yellow ;
+    transition:height 0.2s ease-in-out;
+}
+.boxO.expandedO::after{
+    visibility: visible;
+    height: 100%;
+}
+.reset{
+    font-size: 2rem;
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: chocolate;
+    color:azure;
+}
